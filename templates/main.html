@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+Main
+{% endblock %}
+{% block content %}
+
+<form action = "/" method = "POST" enctype = "multipart/form-data">
+    <p class = "header">Please select the file to be graded:</p>
+    <input type = "file" name = "file"/>
+    <p class = "header">Please select model to be used:</p>
+    <input type = "text" name = "ModelName" placeholder="eleldar/theme-classification"/>
+    <input type = "submit" value="Submit" name="submitInput"/>
+</form> 
+<span id="errorText">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+</span>
+{% endblock %}

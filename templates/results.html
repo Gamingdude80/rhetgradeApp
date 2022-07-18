@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+Results
+{% endblock %}
+{% block content %}
+
+{%for x in range(length(results[0]))%}
+    {%for y in range(length(results[0][x]))%}
+        <p class="tag">{{results[1][x][y]}}:</p>
+        <p style="display:inline">{{results[0][x][y]}}</p>
+    {%endfor%}
+    <br />
+    <br />
+{%endfor%}
+{% endblock %}

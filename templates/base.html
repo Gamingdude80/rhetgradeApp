@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+        <script type="text/javascript" src = "{{ url_for('static', filename='time.js')}}"></script>
+    </head>
+
+    <body class="page">
+        <div class="navbar">
+            <a href="{{ url_for('mainPage') }}" class="navbar-main">Grader</a>
+            <a href="{{ url_for('aboutPage') }}" class="navbar-item">About</a>
+            <div class="navbar-time" id = "time"></div>
+        </div>
+
+        <div class="body-content">
+            {% block content %}
+            {% endblock %}
+            <hr/>
+        </div>
+    </body>
+</html>

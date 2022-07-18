@@ -1,0 +1,54 @@
+.header{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    display: block;
+}
+#errorText{
+    font-weight: 600;
+    color: rgb(210, 29, 29);
+}
+.navbar{
+    /*background-color: rgb(95, 203, 199);*/
+    background: rgb(56,126,111);
+    background: linear-gradient(90deg, rgba(56,126,111,1) 0%, rgba(113,240,241,1) 25%, rgba(0,212,255,1) 100%);
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 8px 5px 8px 5px;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-main{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.navbar-time{
+    font-variant: small-caps;
+    float:right;
+    margin-right: 30px;
+}
+
+.navbar-item{
+    font-variant: small-caps;
+    margin-left: 30px;
+}
+
+.page{
+    /*background-color: rgb(38, 53, 75)*/
+    background-color: rgb(255, 255, 255)
+}
+
+.body-content{
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tag{
+    display: inline;
+    font-weight: 600;
+    color: rgb(69, 247, 66);
+}
