@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,flash
 import os
-from rhetgrade import DocReader
+from rhetgrade import Grader
 
 ALLOWED_EXTENSIONS = {"txt"}
 
@@ -10,20 +10,26 @@ app.config["SECRET_KEY"] = os.urandom(12)
 
 @app.route("/", methods=["GET", "POST"])
 def mainPage():
-    labels = ["lead","position","claim","counterclaim","rebuttal","evidence","counter claim"]
+    labels = ["lead","position","claim","counterclaim",
+            "rebuttal","evidence","counter claim"]
     if request.method == "POST":
         temp = getFile()
         if temp:
             return render_template('main.html', title = "Main page")
         modelName = request.form["ModelName"]
-        reader = DocReader(app.config['UPLOAD_FOLDER']+"document.txt",modelName)
-        results = reader.categorize(labels)
-        return render_template("results.html", title = "Results", results = results, length = len)
+        try:
+            grader = Grader(app.config['UPLOAD_FOLDER']+"document.txt",modelName)
+        except:
+            flash("Model not found")
+            return render_template('main.html', title = "Main page")
+        results = grader.categorize(labels)
+        return render_template("results.html", title = "Results",
+                results = results, length = len)
     return render_template('main.html', title = "Main page")
 
 @app.route("/about")
 def aboutPage():
-    return(render_template("about.html", title = "About"))
+    return render_template("about.html", title = "About")
 
 def getFile():
     if 'file' not in request.files:
