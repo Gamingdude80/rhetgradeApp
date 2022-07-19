@@ -138,4 +138,4 @@ dmypy.json
 .vscode
 
 #Document where imported paper is stored
-uploads/document.txt
+document.txt
