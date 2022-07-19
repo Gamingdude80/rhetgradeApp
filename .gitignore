@@ -136,6 +136,3 @@ dmypy.json
 
 #Visual Studio Code project information
 .vscode
-
-#Document where imported paper is stored
-document.txt

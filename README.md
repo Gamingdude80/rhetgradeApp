@@ -9,4 +9,4 @@ Select a document in the form of a txt document (Only works with txt currently).
 Works with Zero-shot classification models and other NLP catagorization models.
 Enter model name off of huggingface into text box.
 Hit select when finished and wait until the document has been processed.
-A new tab will open showing the the catagorization for each sentence.
+Will be redicted to a page showing the the catagorization for each sentence.
