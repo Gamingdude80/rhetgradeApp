@@ -18,11 +18,14 @@ def mainPage():
             return render_template('main.html', title = "Main page")
         modelName = request.form["ModelName"]
         try:
-            grader = Grader(app.config['UPLOAD_FOLDER']+"document.txt",modelName)
+            grader = Grader(app.config['UPLOAD_FOLDER']+"document.txt",
+                        modelName)
         except:
             flash("Model not found")
             return render_template('main.html', title = "Main page")
-        results = grader.categorize(labels)
+        results = [grader.reader.paragraphs,
+                    grader.categorize(labels,most_accurate=True)]
+        grader.reader.blank_file()
         return render_template("results.html", title = "Results",
                 results = results, length = len)
     return render_template('main.html', title = "Main page")
